@@ -3,13 +3,19 @@ import streamlit as st
 st.title("Neural Network Model")
 
 st.write("""
-The Neural Network model consists of:
+Dataset preprocessing:
+- Normalization using StandardScaler
+
+Model structure:
 - Input layer
-- 2 Hidden layers (ReLU)
+- 2 hidden layers (ReLU)
 - Output layer (Sigmoid)
 
-Optimizer: Adam  
-Loss function: Binary Crossentropy  
+Training:
+- Optimizer: Adam
+- Loss: Binary Crossentropy
+- Epochs: 20
 
-The model learns patterns in the dataset to predict diabetes.
+Result:
+- Accuracy around 74%
 """)
