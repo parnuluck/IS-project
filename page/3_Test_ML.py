@@ -4,6 +4,8 @@ import pickle
 
 st.title("Test Machine Learning Model")
 
+st.subheader("Enter patient data")
+
 model = pickle.load(open("model.pkl", "rb"))
 
 inputs = []
