@@ -14,7 +14,7 @@ result = model.predict(data)
 inputs = []
 for col in ["Pregnancies","Glucose","BloodPressure","SkinThickness",
             "Insulin","BMI","DiabetesPedigreeFunction","Age"]:
-    inputs.append(st.number_input(col))
+    inputs.append(st.number_input(col, min_value=0.0))
 
 if st.button("Predict ML"):
     result = model.predict([inputs])
