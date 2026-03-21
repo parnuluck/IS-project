@@ -3,15 +3,20 @@ import streamlit as st
 st.title("Machine Learning Model")
 
 st.write("""
-This project uses Ensemble Learning which combines:
+Dataset:
+- Pima Indians Diabetes Dataset
+
+Data preprocessing:
+- Replaced zero values with NaN
+- Filled missing values using mean
+- Applied feature scaling
+
+Model:
 - Random Forest
 - Gradient Boosting
 - Logistic Regression
+- Combined using VotingClassifier
 
-These models are combined using VotingClassifier to improve accuracy.
-
-Data preprocessing includes:
-- Handling missing values
-- Replacing zero values
-- Scaling features
+Result:
+- Accuracy around 75%
 """)
