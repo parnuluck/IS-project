@@ -6,7 +6,10 @@ st.title("Test Machine Learning Model")
 
 st.subheader("Enter patient data")
 
-model = pickle.load(open("model.pkl", "rb"))
+scaler = pickle.load(open("scaler.pkl", "rb"))
+
+data = scaler.transform([inputs])
+result = model.predict(data)
 
 inputs = []
 for col in ["Pregnancies","Glucose","BloodPressure","SkinThickness",
