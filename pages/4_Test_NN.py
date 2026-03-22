@@ -1,27 +1,24 @@
 import streamlit as st
-import joblib
-import re
-
+import pickle import re
 # load model
-model = joblib.load("nn_model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
+model = pickle.load(open("nn_model.pkl", "rb")) 
+vectorizer = pickle.load(open("vectorizer.pkl", "rb")) 
 
-def clean_text(text):
-    text = text.lower()
-    text = re.sub(r"<.*?>", "", text)
-    text = re.sub(r"[^a-zA-Z]", " ", text)
-    return text
+def clean_text(text): 
+text = text.lower() 
+text = re.sub(r"<.*?>", "", text) 
+text = re.sub(r"[^a-zA-Z]", " ", text) 
+return text 
 
-st.title("Neural Network (Sentiment Analysis)")
+st.title("Neural Network (Sentiment Analysis)") 
 
-review = st.text_area("Enter movie review")
+review = st.text_area("Enter movie review") 
 
-if st.button("Predict"):
-    cleaned = clean_text(review)
-    vec = vectorizer.transform([cleaned])
-    pred = model.predict(vec)[0]
+if st.button("Predict"): 
+cleaned = clean_text(review) 
+vec = vectorizer.transform([cleaned]) 
+pred = model.predict(vec)[0] 
 
-    if pred == 1:
-        st.success("Positive 😊")
-    else:
-        st.error("Negative 😡")
+if pred == 1: 
+st.success("Positive 😊") 
+else: st.error("Negative 😡")
