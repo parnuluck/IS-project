@@ -1,10 +1,10 @@
 import streamlit as st
-import pickle
+import joblib
 import re
 
 # load model
-model = pickle.load(open("nn_model.pkl", "rb"))
-vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
+model = joblib.load("nn_model.pkl")
+vectorizer = joblib.load("vectorizer.pkl")
 
 def clean_text(text):
     text = text.lower()
