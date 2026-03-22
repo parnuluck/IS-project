@@ -4,12 +4,11 @@ import pickle
 
 st.title("Test Machine Learning Model")
 
-st.subheader("Enter patient data")
-
+# load model
+model = pickle.load(open("model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
-data = scaler.transform([inputs])
-result = model.predict(data)
+st.subheader("Enter patient data")
 
 inputs = []
 for col in ["Pregnancies","Glucose","BloodPressure","SkinThickness",
@@ -17,8 +16,9 @@ for col in ["Pregnancies","Glucose","BloodPressure","SkinThickness",
     inputs.append(st.number_input(col, min_value=0.0))
 
 if st.button("Predict ML"):
-    result = model.predict([inputs])
-    
+    data = scaler.transform([inputs])
+    result = model.predict(data)
+
     if result[0] == 1:
         st.error("Diabetes")
     else:
