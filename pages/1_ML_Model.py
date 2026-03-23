@@ -1,51 +1,61 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
 
-st.title("Machine Learning Model")
+st.title("📊 Machine Learning Model")
 
+# -----------------------------
+# Dataset Section
+# -----------------------------
+st.subheader("📁 Dataset Preview")
+
+# demo dataset (แทนของจริง)
+df = pd.DataFrame({
+    "Glucose": np.random.randint(80, 180, 100),
+    "BMI": np.random.randint(18, 40, 100),
+    "Age": np.random.randint(20, 70, 100),
+    "Outcome": np.random.choice([0, 1], 100)
+})
+
+st.write(df.head())
+
+# -----------------------------
+# Dataset Info
+# -----------------------------
+st.subheader("📏 Dataset Info")
+st.write("Shape:", df.shape)
+
+# -----------------------------
+# Class Distribution
+# -----------------------------
+st.subheader("📊 Class Distribution")
+st.bar_chart(df["Outcome"].value_counts())
+
+# -----------------------------
+# Model Info
+# -----------------------------
+st.subheader("🤖 Models Used")
 st.write("""
-Dataset:
-- Pima Indians Diabetes Dataset
-
-Data preprocessing:
-- Replaced zero values with NaN
-- Filled missing values using mean
-- Applied feature scaling
-
-Model:
-- Random Forest
-- Gradient Boosting
-- Logistic Regression
-- Combined using VotingClassifier
-
-Result:
-- Accuracy around 75%
+- Random Forest  
+- Gradient Boosting  
+- Logistic Regression  
+- Voting Classifier (Ensemble)
 """)
 
-st.subheader("Additional Dataset")
+# -----------------------------
+# Performance
+# -----------------------------
+st.subheader("📈 Model Performance")
+
+accuracy = 0.75  # ใส่ค่าจริงของคุณได้
+st.metric(label="Accuracy", value=f"{accuracy*100:.2f}%")
+
+# -----------------------------
+# Notes
+# -----------------------------
+st.subheader("🧠 Notes")
 st.write("""
-Dataset: Breast Cancer Wisconsin Dataset
-
-Source:
-- Built-in dataset from scikit-learn library
-
-Features:
-- Mean radius
-- Mean texture
-- Mean perimeter
-- Mean area
-- Mean smoothness
-- And other statistical features (total ~30 features)
-
-Data Characteristics:
-- Binary classification (Malignant / Benign)
-- Some features require scaling due to different ranges
-- Contains noise and requires preprocessing
-
-Preprocessing:
-- Feature scaling using StandardScaler
-- Handling inconsistent feature ranges
-
-Purpose:
-- Used to validate model performance on a different dataset
-- Demonstrates generalization ability of the model
+- Data preprocessing includes handling missing values and scaling  
+- Ensemble model improves stability and performance  
+- Suitable for structured/tabular data  
 """)
