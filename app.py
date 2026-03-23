@@ -18,7 +18,7 @@ with col2:
     st.title("🤖 AI Prediction Dashboard")
     st.markdown("### Diabetes Prediction & Sentiment Analysis System")
 
-st.markdown("**Developed by: Parnuluck Saetang 6704062612359")  # 👉 เปลี่ยนเป็นชื่อคุณ
+st.markdown("Developed by: Parnuluck Saetang 6704062612359")  # 👉 เปลี่ยนเป็นชื่อคุณ
 
 st.divider()
 
