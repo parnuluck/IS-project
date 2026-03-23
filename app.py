@@ -12,7 +12,7 @@ st.set_page_config(
 col1, col2 = st.columns([1, 4])
 
 with col1:
-    st.image("https://cdn-icons-png.flaticon.com/512/4712/4712027.png", width=120)
+    st.image("https://media.discordapp.net/attachments/872884301421748244/1292779900159266916/Q1.jpg?ex=69c2589a&is=69c1071a&hm=0ec3ea63b3c8353b3b7037bda444eb9307d01b9d64175aabfc8fedceb7f1b206&=&format=webp&width=644&height=859", width=120)
 
 with col2:
     st.title("🤖 AI Prediction Dashboard")
