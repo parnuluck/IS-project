@@ -6,7 +6,7 @@ st.title("🧠 Neural Network Model (Sentiment Analysis)")
 # -----------------------------
 # Load dataset (sample)
 # -----------------------------
-df = pd.read_csv("sample_imdb.csv")
+df = pd.read_csv("data/sample_imdb.csv")
 
 # -----------------------------
 # Dataset Preview
