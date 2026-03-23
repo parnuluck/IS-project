@@ -39,7 +39,7 @@ col1, col2 = st.columns([1, 4])
 
 with col1:
     st.markdown("""
-    <img src="https://media.discordapp.net/attachments/872884301421748244/1292779900159266916/Q1.jpg?ex=69c2589a&is=69c1071a&hm=0ec3ea63b3c8353b3b7037bda444eb9307d01b9d64175aabfc8fedceb7f1b206&=&format=webp&width=644&height=859"
+    <img src="https://media.discordapp.net/attachments/872884301421748244/1485718716661498047/IMG_20240618_125257.jpg?ex=69c2e2e1&is=69c19161&hm=1f3eedefd5b18981a7fd4211d15f0167aa17c750d135232378aca022794f62e6&=&format=webp&width=781&height=989"
     width="120" style="border-radius:50%;">
     """, unsafe_allow_html=True)
 
