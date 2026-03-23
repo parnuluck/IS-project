@@ -115,7 +115,8 @@ st.subheader("How to Use")
 st.write("""
 1. Open ML Model → View diabetes prediction  
 2. Open NN Model → Explore training results  
-3. Open Test NN → Try your own input  
+3. Open Test ML → Try input 
+4. Open Test NN → Try your own input  
 """)
 
 # -----------------------------
