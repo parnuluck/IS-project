@@ -105,7 +105,7 @@ col1, col2, col3 = st.columns(3)
 
 col1.metric("ML Accuracy", "75%")
 col2.metric("NN Accuracy", "85%")
-col3.metric("Dataset Size", "20K+")
+col3.metric("Dataset Size", "5K+")
 
 # -----------------------------
 # Guide
