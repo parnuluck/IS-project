@@ -1,90 +1,50 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 
 st.title("🧠 Neural Network Model (Sentiment Analysis)")
+
+# -----------------------------
+# Load dataset (sample)
+# -----------------------------
+df = pd.read_csv("sample_imdb.csv")
 
 # -----------------------------
 # Dataset Preview
 # -----------------------------
 st.subheader("📁 Dataset Preview")
-
-df = pd.DataFrame({
-    "review": [
-        "This movie is amazing",
-        "I hate this film",
-        "Best movie ever",
-        "Worst experience"
-    ],
-    "sentiment": [1, 0, 1, 0]
-})
-
-st.write(df)
+st.write(df.head())
 
 # -----------------------------
 # Dataset Info
 # -----------------------------
 st.subheader("📏 Dataset Info")
 st.write("Shape:", df.shape)
+st.write("Columns:", df.columns.tolist())
 
 # -----------------------------
-# Class Distribution
+# Missing Values
+# -----------------------------
+st.subheader("❗ Missing Values")
+st.write(df.isnull().sum())
+
+# -----------------------------
+# Sentiment Distribution
 # -----------------------------
 st.subheader("📊 Sentiment Distribution")
 st.bar_chart(df["sentiment"].value_counts())
 
 # -----------------------------
-# Preprocessing
-# -----------------------------
-st.subheader("⚙️ Preprocessing Steps")
-st.write("""
-- Convert text to lowercase  
-- Remove HTML tags  
-- Remove special characters  
-- TF-IDF Vectorization  
-""")
-
-# -----------------------------
-# Model Structure
-# -----------------------------
-st.subheader("🧠 Model Architecture")
-st.write("""
-- Dense (64) → ReLU  
-- Dense (32) → ReLU  
-- Output (Sigmoid)  
-""")
-
-# -----------------------------
-# Performance
+# Model Performance
 # -----------------------------
 st.subheader("📈 Model Performance")
-
-accuracy = 0.85  # ใส่ค่าจริงจาก Colab
-st.metric(label="Accuracy", value=f"{accuracy*100:.2f}%")
-
-# -----------------------------
-# Example Prediction
-# -----------------------------
-st.subheader("🔍 Example Predictions")
-
-example_reviews = [
-    "I love this movie",
-    "This is terrible"
-]
-
-example_preds = ["Positive", "Negative"]
-
-for r, p in zip(example_reviews, example_preds):
-    st.write(f"**Review:** {r}")
-    st.write(f"Prediction: {p}")
-    st.write("---")
+st.metric("Accuracy", "85%")  # ใส่ค่าจริงจาก Colab
 
 # -----------------------------
 # Notes
 # -----------------------------
 st.subheader("🧠 Notes")
 st.write("""
-- Neural Network handles text via vectorization  
-- Works better with large datasets  
-- Captures complex patterns in language  
+- Text cleaned and vectorized using TF-IDF  
+- Neural Network used for classification  
+- Works well with large text datasets  
 """)
