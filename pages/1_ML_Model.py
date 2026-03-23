@@ -6,7 +6,7 @@ st.title("📊 Machine Learning Model")
 # -----------------------------
 # Load dataset
 # -----------------------------
-df = pd.read_csv("diabetes.csv")
+df = pd.read_csv("data/diabetes.csv")
 
 # -----------------------------
 # Dataset Preview
