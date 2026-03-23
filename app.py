@@ -46,7 +46,7 @@ with col1:
 with col2:
     st.markdown('<div class="title">AI Prediction Dashboard</div>', unsafe_allow_html=True)
     st.markdown('<div class="subtitle">Diabetes Prediction & Sentiment Analysis</div>', unsafe_allow_html=True)
-    st.markdown('<div class="name">Parnuluck Saetang</div>', unsafe_allow_html=True)
+    st.markdown('<div class="name">Parnuluck Saetang 6704062612359</div>', unsafe_allow_html=True)
 
 st.divider()
 
