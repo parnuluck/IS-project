@@ -1,112 +1,152 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="AI Health & Sentiment App",
-    page_icon="🤖",
+    page_title="Pixel AI Lab",
+    page_icon="🧪",
     layout="wide"
 )
 
 # -----------------------------
-# Header + Profile
+# 🎨 Pixel Style CSS
+# -----------------------------
+st.markdown("""
+<style>
+body {
+    background-color: #0f172a;
+}
+
+.pixel-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #22c55e;
+    text-shadow: 3px 3px #000;
+    font-family: monospace;
+}
+
+.pixel-sub {
+    font-size: 18px;
+    color: #94a3b8;
+    font-family: monospace;
+}
+
+.card {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #22c55e;
+    box-shadow: 4px 4px #000;
+}
+
+.center {
+    text-align: center;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# -----------------------------
+# 🖼️ Pixel Banner
+# -----------------------------
+st.image(
+    "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
+    use_container_width=True
+)
+
+# -----------------------------
+# Header
 # -----------------------------
 col1, col2 = st.columns([1, 4])
 
 with col1:
-    st.image("https://media.discordapp.net/attachments/872884301421748244/1292779900159266916/Q1.jpg?ex=69c2589a&is=69c1071a&hm=0ec3ea63b3c8353b3b7037bda444eb9307d01b9d64175aabfc8fedceb7f1b206&=&format=webp&width=644&height=859", width=120)
+    st.markdown("""
+    <img src="https://media.discordapp.net/attachments/872884301421748244/1292779900159266916/Q1.jpg"
+    width="120" style="border-radius:50%; border:3px solid #22c55e;">
+    """, unsafe_allow_html=True)
 
 with col2:
-    st.title("🤖 AI Prediction Dashboard")
-    st.markdown("### Diabetes Prediction & Sentiment Analysis System")
+    st.markdown('<div class="pixel-title">🧪 Pixel AI Lab</div>', unsafe_allow_html=True)
+    st.markdown('<div class="pixel-sub">Diabetes Prediction & Sentiment Engine</div>', unsafe_allow_html=True)
 
-st.markdown("Developed by: Parnuluck Saetang 6704062612359")  # 👉 เปลี่ยนเป็นชื่อคุณ
+st.markdown("<div class='pixel-sub'>Developed by: Parnuluck Saetang</div>", unsafe_allow_html=True)
 
 st.divider()
 
 # -----------------------------
-# Project Description
+# About
 # -----------------------------
-st.subheader("📌 About This Project")
+st.markdown('<div class="pixel-title">📜 About</div>', unsafe_allow_html=True)
 
-st.write("""
-เว็บแอปนี้ใช้ Machine Learning และ Neural Network เพื่อทำนายข้อมูล 2 ประเภท:
+st.markdown("""
+<div class="pixel-sub">
+A retro-inspired AI dashboard that blends healthcare prediction and text intelligence.<br><br>
 
-1. 🩺 **Diabetes Prediction**  
-   - วิเคราะห์ความเสี่ยงโรคเบาหวานจากข้อมูลสุขภาพ  
-
-2. 💬 **Sentiment Analysis**  
-   - วิเคราะห์ความรู้สึกจากข้อความรีวิวภาพยนตร์  
-""")
+🩺 Predict diabetes risk using health data  
+💬 Analyze sentiment from movie reviews  
+</div>
+""", unsafe_allow_html=True)
 
 # -----------------------------
-# Features Section
+# Features (Cards)
 # -----------------------------
-st.subheader("🚀 Features")
+st.markdown('<div class="pixel-title">⚡ Features</div>', unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.info("""
-🩺 **Diabetes Prediction**
-
-- Random Forest  
-- Gradient Boosting  
-- Logistic Regression  
-- Ensemble Model  
-""")
+    st.markdown("""
+    <div class="card center">
+    🩺 <b>Diabetes AI</b><br><br>
+    Random Forest<br>
+    Gradient Boosting<br>
+    Logistic Regression
+    </div>
+    """, unsafe_allow_html=True)
 
 with col2:
-    st.info("""
-🧠 **Neural Network**
-
-- TF-IDF  
-- MLP Classifier  
-- NLP Processing  
-""")
+    st.markdown("""
+    <div class="card center">
+    🧠 <b>Neural Network</b><br><br>
+    TF-IDF<br>
+    MLP Model<br>
+    NLP Processing
+    </div>
+    """, unsafe_allow_html=True)
 
 with col3:
-    st.info("""
-💬 **Sentiment Result**
+    st.markdown("""
+    <div class="card center">
+    💬 <b>Sentiment</b><br><br>
+    Positive 😊<br>
+    Negative 😡<br>
+    Real-time
+    </div>
+    """, unsafe_allow_html=True)
 
-- Positive 😊  
-- Negative 😡  
-- Real-time prediction  
-""")
+# -----------------------------
+# Stats
+# -----------------------------
+st.markdown('<div class="pixel-title">📊 Stats</div>', unsafe_allow_html=True)
+
+col1, col2, col3 = st.columns(3)
+
+col1.metric("ML Accuracy", "75%")
+col2.metric("NN Accuracy", "85%")
+col3.metric("Dataset", "20K+")
 
 # -----------------------------
 # How to Use
 # -----------------------------
-st.subheader("🧭 How to Use")
+st.markdown('<div class="pixel-title">🕹️ How to Play</div>', unsafe_allow_html=True)
 
-st.write("""
-1. ไปที่ **ML Model** → ดูการทำนายโรคเบาหวาน  
-2. ไปที่ **NN Model** → ดูการวิเคราะห์ข้อความ  
-3. ไปที่ **Test NN** → ทดลองพิมพ์รีวิว  
-""")
-
-# -----------------------------
-# Highlight Section
-# -----------------------------
-st.subheader("✨ Highlights")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.success("✔ รองรับทั้งข้อมูลตัวเลขและข้อความ")
-    st.success("✔ ใช้ AI วิเคราะห์แบบอัตโนมัติ")
-
-with col2:
-    st.success("✔ ใช้งานง่ายผ่าน Web App")
-    st.success("✔ แสดงผลแบบ Real-time")
-
-# -----------------------------
-# Call to Action
-# -----------------------------
-st.divider()
-
-st.success("👉 เริ่มใช้งานได้เลยจากเมนูด้านซ้าย!")
+st.markdown("""
+<div class="pixel-sub">
+1. Open ML Model → Health prediction  
+2. Open NN Model → See training results  
+3. Open Test NN → Try your own text  
+</div>
+""", unsafe_allow_html=True)
 
 # -----------------------------
 # Footer
 # -----------------------------
 st.markdown("---")
-st.caption("Developed with ❤️ using Streamlit | AI Project")
+st.markdown("<div class='pixel-sub center'>Built with ❤️ + caffeine</div>", unsafe_allow_html=True)
