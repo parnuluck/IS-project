@@ -70,34 +70,31 @@ st.subheader("Features")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.markdown("""
-    <div class="card">
-    <b>Diabetes Prediction</b><br><br>
-    • Random Forest<br>
-    • Gradient Boosting<br>
-    • Logistic Regression
-    </div>
-    """, unsafe_allow_html=True)
+    with st.container(border=True):
+        st.markdown("**Diabetes Prediction**")
+        st.write("""
+        • Random Forest  
+        • Gradient Boosting  
+        • Logistic Regression
+        """)
 
 with col2:
-    st.markdown("""
-    <div class="card">
-    <b>Neural Network</b><br><br>
-    • TF-IDF<br>
-    • MLP Classifier<br>
-    • NLP Processing
-    </div>
-    """, unsafe_allow_html=True)
+    with st.container(border=True):
+        st.markdown("**Neural Network**")
+        st.write("""
+        • TF-IDF  
+        • MLP Classifier  
+        • NLP Processing
+        """)
 
 with col3:
-    st.markdown("""
-    <div class="card">
-    <b>Sentiment Result</b><br><br>
-    • Positive 😊<br>
-    • Negative 😡<br>
-    • Real-time
-    </div>
-    """, unsafe_allow_html=True)
+    with st.container(border=True):
+        st.markdown("**Sentiment Result**")
+        st.write("""
+        • Positive 😊  
+        • Negative 😡  
+        • Real-time
+        """)
 
 # -----------------------------
 # Stats
